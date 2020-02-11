@@ -53,6 +53,26 @@
     (shell-command tmux-cmd)))  ; At edges, send command to tmux
 
 :autoload
+(defun -windmove-up ()
+  (interactive)
+  (-windmove "up" "tmux select-pane -U"))
+
+:autoload
+(defun -windmove-down ()
+  (interactive)
+  (-windmove "down" "tmux select-pane -D"))
+
+:autoload
+(defun -windmove-left ()
+  (interactive)
+  (-windmove "left" "tmux select-pane -L"))
+
+:autoload
+(defun -windmove-right ()
+  (interactive)
+  (-windmove "right" "tmux select-pane -R"))
+
+:autoload
 (defun open-vertical ()
   (interactive)
   (shell-command (format "tmux split-window -h -p %s" vertical-percent)))
